@@ -1,15 +1,18 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter, Dela_Gothic_One } from "next/font/google";
 import "./globals.css";
+import Header from "@/sections/Header";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
+  variable: "--font-Inter",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const delaGothic = Dela_Gothic_One({
+  variable: "--font-Dela",
   subsets: ["latin"],
+  weight: ["400"],
 });
 
 export const metadata: Metadata = {
@@ -23,11 +26,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning suppressContentEditableWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${inter.variable} ${delaGothic.variable} antialiased bg-[#01060f]`}
       >
-        {children}
+        <Header />
+        <main className="relative ">
+          <div className="pointer-events-none absolute inset-0 -z-10 bg-white/5 bg-[linear-gradient(to_right,#d9d9d980_1px,transparent_1px),linear-gradient(to_bottom,#d9d9d980_1px,transparent_1px)] bg-size-[122px_122px]" />
+          <div className="relative z-10">
+            {children}
+          </div>
+        </main>
       </body>
     </html>
   );
