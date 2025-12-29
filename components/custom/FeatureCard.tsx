@@ -71,7 +71,7 @@ const FeatureCard = () => {
                     </p>
                 </div>
                 <div className="flex justify-center w-full mt-5">
-                    <div className="h-[300px] md:h-[390px] w-full max-w-[400px] overflow-hidden relative flex justify-center">
+                    <div className="h-75 md:h-97.5 w-full max-w-100 overflow-hidden relative flex justify-center">
                         <Image
                             src={GridImage3}
                             alt="Robot1"
@@ -112,7 +112,7 @@ const FeatureCard = () => {
                             alt="Robot2"
                             width={520}
                             height={520}
-                            className="object-contain object-bottom w-full h-full max-h-[580px] scale-110 origin-bottom"
+                            className="object-contain object-bottom w-full h-full max-h-145 scale-110 origin-bottom"
                         />
                     </div>
                 </div>
@@ -140,7 +140,7 @@ const FeatureCard = () => {
                     </p>
                 </div>
                 <div className="flex justify-center w-full mt-5">
-                    <div className="h-[300px] md:h-[390px] w-full max-w-[400px] overflow-hidden relative flex justify-center">
+                    <div className="h-75 md:h-97.5 w-full max-w-100 overflow-hidden relative flex justify-center">
                         <Image
                             src={GridImage2}
                             alt="Robot1"

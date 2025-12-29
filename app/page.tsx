@@ -1,5 +1,6 @@
 import About from "@/sections/About";
 import Economy from "@/sections/Economy";
+import FaqseSection from "@/sections/FaqSection";
 import Feature from "@/sections/Feature";
 import Hero from "@/sections/Hero";
 import StepsSection from "@/sections/StepsSection";
@@ -14,6 +15,7 @@ export default function Home() {
       <Economy />
       <StepsSection />
       <TeamSection />
+      <FaqseSection />
     </>
   );
 }
