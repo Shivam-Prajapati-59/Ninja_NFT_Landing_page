@@ -25,7 +25,6 @@ const Economy = () => {
     });
 
     return (
-        /* 1. Added more bottom padding (pb-40 to pb-60) to account for absolute circles */
         <div className='relative bg-[#030e14] py-10 pb-40 md:pb-60 h-full w-full box-border overflow-x-hidden'>
             <section ref={sectionRef} className='container mx-auto px-4'>
                 <div className="text-center xl:px-20 lg:mt-20">
@@ -45,7 +44,6 @@ const Economy = () => {
                 </div>
 
                 {/* Desktop Layout */}
-                {/* 2. Removed overflow-clip so circles aren't cut off */}
                 <div className='hidden md:block relative mt-20 w-fit mx-auto max-w-full'>
                     {/* LAYER 1: The Spinning Background */}
                     <motion.div
@@ -69,7 +67,7 @@ const Economy = () => {
                         variants={imageZoomIn}
                         initial="initial"
                         animate="animate"
-                        className="absolute z-30 w-[600px] max-w-[80%] h-auto pointer-events-none 
+                        className="absolute z-30 w-150 max-w-[80%] h-auto pointer-events-none 
                         left-1/2 -translate-x-1/2 
                         top-[74%] -translate-y-1/2">
                         <Image
@@ -82,7 +80,6 @@ const Economy = () => {
                     </motion.div>
 
                     {/* LAYER 3: Dark Circles */}
-                    {/* 3. Adjusted positioning to be visible */}
                     <div className="absolute z-20 top-70 left-10">
                         <DarkCircle percent={25} text='public mint' unit='%' />
                     </div>
@@ -97,9 +94,9 @@ const Economy = () => {
                     </div>
                 </div>
 
-                {/* Mobile Layout */}
-                <div className='md:hidden mt-10 flex flex-col items-center w-full'>
-                    <div className='relative w-full aspect-square max-w-[320px] mx-auto flex justify-center items-center'>
+                {/* Mobile Layout - Added overflow-hidden to prevent x-axis bleed */}
+                <div className='md:hidden mt-10 flex flex-col items-center w-full overflow-hidden'>
+                    <div className='relative w-full aspect-square max-w-[320px] mx-auto flex justify-center items-center overflow-hidden'>
                         <motion.div
                             animate={{ rotate: 360 }}
                             transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
@@ -129,7 +126,7 @@ const Economy = () => {
                         </motion.div>
                     </div>
 
-                    <div className='flex flex-col items-center gap-6 mt-12 w-full'>
+                    <div className='flex flex-col items-center gap-6 mt-12 w-full max-w-full'>
                         <DarkCircle percent={25} text='public mint' unit='%' />
                         <DarkCircle percent={20} text='Whitelist Sale' unit='%' />
                         <DarkCircle percent={4.1} text='Mint Price' unit='ETH' />
