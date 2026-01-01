@@ -1,12 +1,34 @@
 "use client";
-import Image from 'next/image'
+import { useState } from 'react';
+import { motion, useScroll, useMotionValueEvent } from 'motion/react';
+import Image from 'next/image';
 import { Menu } from 'lucide-react';
-import FatLogo from '@/public/assets/fatlogo.svg'
+import FatLogo from '@/public/assets/fatlogo.svg';
 import Link from 'next/link';
 
 const Header = () => {
+    const [isScrolled, setIsScrolled] = useState(false);
+    const { scrollY } = useScroll();
+
+    // useMotionValueEvent is more performant for tracking scroll
+    useMotionValueEvent(scrollY, "change", (latest) => {
+        if (latest > 50) {
+            setIsScrolled(true);
+        } else {
+            setIsScrolled(false);
+        }
+    });
+
     return (
-        <header className='sticky top-0 z-20 sm:bg-black md:bg-[#d9d9d90d] font-inter'>
+        <motion.header
+            className='sticky top-0 z-20 font-inter border-b border-transparent'
+            animate={{
+                backgroundColor: isScrolled ? "rgba(0, 0, 0, 0.6)" : "rgba(0, 0, 0, 0)",
+                backdropFilter: isScrolled ? "blur(12px)" : "blur(0px)",
+                borderColor: isScrolled ? "rgba(255, 255, 255, 0.1)" : "rgba(255, 255, 255, 0)",
+            }}
+            transition={{ duration: 0.3 }}
+        >
             <div className='py-5'>
                 <div className='container mx-auto px-4 sm:px-6'>
                     <div className='flex items-center gap-4'>
@@ -33,8 +55,8 @@ const Header = () => {
                     </div>
                 </div>
             </div>
-        </header>
-    )
-}
+        </motion.header>
+    );
+};
 
-export default Header
+export default Header;

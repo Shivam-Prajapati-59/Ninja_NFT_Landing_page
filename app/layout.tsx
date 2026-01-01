@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Dela_Gothic_One } from "next/font/google";
 import "./globals.css";
 import Header from "@/sections/Header";
+import ReactLenis from 'lenis/react';
 
 const inter = Inter({
   variable: "--font-Inter",
@@ -30,13 +31,15 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${delaGothic.variable} antialiased bg-[#01060f]`}
       >
-        <Header />
-        <main className="relative ">
-          <div className="pointer-events-none absolute inset-0 -z-10 bg-white/5 bg-[linear-gradient(to_right,#d9d9d980_1px,transparent_1px),linear-gradient(to_bottom,#d9d9d980_1px,transparent_1px)] bg-size-[122px_122px]" />
-          <div className="relative z-10">
-            {children}
-          </div>
-        </main>
+        <ReactLenis root>
+          <Header />
+          <main className="relative " >
+            <div className="pointer-events-none absolute inset-0 -z-10 bg-white/5 bg-[linear-gradient(to_right,#d9d9d980_1px,transparent_1px),linear-gradient(to_bottom,#d9d9d980_1px,transparent_1px)] bg-size-[122px_122px]" />
+            <div className="relative z-10">
+              {children}
+            </div>
+          </main>
+        </ReactLenis>
       </body>
     </html>
   );

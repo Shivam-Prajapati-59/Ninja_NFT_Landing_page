@@ -2,7 +2,7 @@
 import NFTcard from "@/components/custom/NFTcard"
 import heroninja from "@/public/assets/HeroNinja.svg"
 import grassImage from '@/public/assets/grass.png'
-import { motion, useScroll, useTransform } from "motion/react";
+import { motion, useScroll, useSpring, useTransform } from "motion/react";
 import { useRef } from "react";
 
 const Hero = () => {
@@ -12,9 +12,10 @@ const Hero = () => {
         target: sectionRef,
         offset: ["start end", "end start"]
     });
-
-    const translateY = useTransform(scrollYProgress, [0, 1], [150, -150]);
-
+    const translateY = useSpring(
+        useTransform(scrollYProgress, [0, 1], [60, -60]),
+        { stiffness: 120, damping: 25 }
+    );
 
     return (<>
 
