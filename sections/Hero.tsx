@@ -1,4 +1,5 @@
 "use client";
+import CountUp from "@/components/custom/Countup";
 import NFTcard from "@/components/custom/NFTcard"
 import heroninja from "@/public/assets/HeroNinja.svg"
 import grassImage from '@/public/assets/grass.png'
@@ -64,7 +65,12 @@ const Hero = () => {
                     <div className="p-6 rounded-3xl bg-[linear-gradient(135deg,transparent_0%,rgba(255,255,255,0.1)_50%,rgba(255,255,255,0.05)_100%)] backdrop-blur-sm flex flex-col justify-center gap-8 md:gap-18 md:w-[45%] xl:w-[35%]">
                         <div>
                             <h1 className="flex flex-col">
-                                <span className="text-5xl font-dela">500+</span>
+                                <span className="text-5xl font-dela">
+                                    <CountUp
+                                        to={500}
+                                        startWhen={true}
+                                    />+
+                                </span>
                                 <span className="text-xl font-light opacity-80">
                                     Unique masked ninja NFTs
                                 </span>
@@ -73,7 +79,10 @@ const Hero = () => {
 
                         <div>
                             <h1 className="flex flex-col">
-                                <span className="text-5xl font-dela">48.5 Hrs</span>
+                                <span className="text-5xl font-dela"><CountUp
+                                    to={48.5}
+                                    startWhen={true}
+                                /> Hrs</span>
                                 <span className="text-xl font-light opacity-80">
                                     Sold Out during presale launch
                                 </span>
