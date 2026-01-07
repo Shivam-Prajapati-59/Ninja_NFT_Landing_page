@@ -30,7 +30,7 @@ const About = () => {
                     <p className="text-[#D3eD05] text-xl font-medium mb-6 uppercase">
                         About nftninja
                     </p>
-                    <h2 className="text-4xl md:text-5xl xl:text-6xl text-white font-dela font-medium uppercase">
+                    <h2 className="text-3xl md:text-5xl xl:text-6xl text-white font-dela font-medium uppercase">
                         <AnimatedText
                             text="nftninja is a limited collection of 5,000 warriors."
                             highlightText="5,000 warriors."

@@ -8,7 +8,7 @@ import GridImage6 from "@/public/assets/gridImage/gridImage6.png";
 
 const cardList = [
     { title: "Senseimint", descp: "Founder & Strategist", image: GridImage4 },
-    { title: "Whispermancer", descp: "Illustrator & Trait Designer", image: GridImage5 },
+    { title: "Whispermer", descp: "Illustrator & Trait Designer", image: GridImage5 },
     { title: "Kodekage", descp: "Lead Blockchain Developer", image: GridImage6 },
 ];
 
@@ -45,7 +45,7 @@ const TeamCard = () => {
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, amount: 0.2 }}
-            className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 px-6 py-12"
+            className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 px-6 py-12 overflow-x-hidden"
         >
             {cardList.map((card, index) => (
                 <motion.div

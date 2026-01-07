@@ -15,7 +15,7 @@ const Feature = () => {
 
     return (
         <div className='relative bg-[#030e14] py-10'>
-            <section ref={sectionRef} className='container mx-auto px-4'>
+            <section ref={sectionRef} className='container mx-auto'>
                 <div className="text-center xl:px-20 lg:mt-20">
                     <p className="text-[#D3eD05] text-lg font-medium mb-6 uppercase">
                         Features
@@ -33,7 +33,7 @@ const Feature = () => {
                         and long-term holder value.
                     </p>
                 </div>
-                <div className='mt-10'>
+                <div className='mt-10 overflow-hidden'>
                     <FeatureCard />
                 </div>
             </section>

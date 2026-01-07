@@ -15,7 +15,7 @@ const TeamSection = () => {
     });
     return (
         <div className='relative bg-[#030e14] py-10'>
-            <section ref={sectionRef} className='container mx-auto px-4'>
+            <section ref={sectionRef} className='container mx-auto'>
                 <div className="text-center xl:px-20 lg:mt-0">
                     <p className="text-[#D3eD05] text-lg font-medium mb-6 uppercase">
                         Team
